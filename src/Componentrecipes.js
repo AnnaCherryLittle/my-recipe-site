@@ -1,4 +1,4 @@
-function ComponentRecipes ({label, image, calories, ingredients, dishType}) {
+function ComponentRecipes ({label, image, calories, ingredients}) {
     return (
         <div className="fon">
             <div className="container-info">

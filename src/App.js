@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import ComponentRecipes from './Componentrecipes';
-import Buttons from './Buttons';
-
 
 function App() {
 
@@ -12,7 +10,6 @@ function App() {
   const [search, setSearch] = useState("");
   const [myRecipes, setMyRecipes] = useState([]);
   const [mySubmit, setMySubmit] = useState("ice");
-  const [type, setType] = useState([]);
 
   useEffect(() => {
     const getRecipe = async () => {
@@ -33,39 +30,30 @@ function App() {
     setMySubmit(search);
   }
 
-  // const chooseRecipe = ComponentRecipes.filter(element => 
-  //   element.recipe.dishType === dishType);
-  //   setType(type);
-  // }
-
   return (
     <div> 
       <div className="container-cap">
         <div className="container">
-        <h1>Choose a Recipe</h1>
-      </div>
+          <h1>Choose a Recipe</h1>
+        </div>
 
-      <div className="container-input">
-        <form onSubmit={finalSearch}>
-          <input className="input" onChange={recipeScan} value = {search} />
-        </form>
-        <button className="btn" onClick={finalSearch}>🔍</button>
+        <div className="container-input">
+          <form onSubmit={finalSearch}>
+            <input className="input" onChange={recipeScan} value = {search} />
+          </form>
+          <button className="btn" onClick={finalSearch}>🔍</button>
+        </div>
       </div>
-      </div>
-
-      {/* <div className="container">
-        <Buttons filteredBtnRecipe={chooseRecipe}/>
-      </div> */}
 
       <div className="container-recipes">
-      {myRecipes.map((element, index) => (
-        <ComponentRecipes key={index}
-        label={element.recipe.label} 
-        image={element.recipe.image}  
-        ingredients={element.recipe.ingredientLines}
-        calories={element.recipe.calories}
-        dishType={element.recipe.dishType}/>
-      ))}
+        {myRecipes.map((element, index) => (
+          <ComponentRecipes key={index}
+          label={element.recipe.label} 
+          image={element.recipe.image}  
+          ingredients={element.recipe.ingredientLines}
+          calories={element.recipe.calories}
+          dishType={element.recipe.dishType}/>
+        ))}
       </div>
     </div>
   );

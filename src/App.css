@@ -33,12 +33,6 @@ body {
   padding: 10px;
   border: none;
 }
-.container-btn {
-  margin: 3px;
-  padding: 3px;
-  border: none;
-  /* background-color: #6DA4AA; */
-}
 
 h1 {
   font-size: 60px;
@@ -64,8 +58,8 @@ h1 {
 
 .fon {
   margin: 10px;
-  background: #AAD7D9; /* Цвет фона */
-  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+  background: #AAD7D9;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   padding: 10px;
 }
 
